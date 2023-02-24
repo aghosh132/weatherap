@@ -48,7 +48,7 @@ function formatAMPM(date) {
 function displayData(cityData){
     cityName=cityData.name
     humid=cityData.main.humidity
-    temperature=Math.floor(((cityData.main.temp)-32)*.5556)
+    temperature=((cityData.main.temp)-273.15).toFixed()
     windspeed=cityData.wind.speed
     var today = new Date();
     var day =  today.getDay();
