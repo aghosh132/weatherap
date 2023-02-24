@@ -50,14 +50,16 @@ function displayData(cityData){
     humid=cityData.main.humidity
     temperature=((cityData.main.temp)-273.15).toFixed()
     windspeed=cityData.wind.speed
+    condition=cityData.weather[0].description
     var today = new Date();
     var day =  today.getDay();
     var dayList = ["sunday","Monday","Tuesday","wednesday","Thursday","Friday","Saturday"];
 
 result.innerHTML=`
-<h1 class="temp">${dayList[day]}</h1>
-<h2 class="city">Weather in ${cityName} <i class="fa-solid fa-cloud"></i></h2> 
-      <h1 class="temp">${temperature}°C <i class="fa-solid fa-sun"></i></h1>
+      <h1 class="temp">${dayList[day]}</h1>
+      <h2 class="city">Weather in ${cityName} <i class="fa-solid fa-cloud"></i></h2> 
+      <h2>${condition}</h2>
+      <h1 class="temp">${temperature}°C <i class="fa-solid fa-sun"></i></h1>  
       <h4 class="humidity">Humidity <i class="fa-solid fa-arrow-right"></i> ${humid}%</h4>
       <h4 class="wind">Wind speed <i class="fa-solid fa-arrow-right"></i> ${windspeed} km/h</h4>
 `
